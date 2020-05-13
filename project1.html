@@ -1,0 +1,112 @@
+<htmml>
+    <head>
+        <title>project of calculator</title>
+        <style>
+            body{
+                background-color:black;
+                margin:0;
+                padding:0;
+            }
+            #calculator{
+                position:relative;
+                top:100px;
+                width:500px;
+                margin:0 auto;
+                height:500px;
+                background-color:teal;
+            }
+            #alpha{
+                color:rgb(139, 46, 46);
+                text-align:center;
+                font-size:30px;
+                font-weight:bold;
+                font-family:'Times New Roman';
+            }
+            #c{
+                color:white;
+                background-color: black;
+                position:relative;
+                top:50px;
+                left:35px;
+                width:56px;
+                height:60px;
+                font-size:25px;
+            }
+           
+            input[type="text"]{
+                position:relative;
+                top:10px;
+                left:20px;
+                font-size:30px;
+                color:white;
+                text-align: center;
+                background-color:black;
+                border-color:white ;
+                width:90%;
+                height:70px;
+            }
+            #numbers{
+                position:relative;
+                top:50px;
+                left:35px;
+            }
+            .click{
+                color:white;
+                background-color: black;
+                width:100px;
+                height:60px;
+                font-size:25px;
+            }
+        </style>
+    </head>
+    <boby>
+        <div id="calculator">
+            <h3 id="alpha">Normal Calculator</h3>
+            <td colspan="3"><input type="text" id="venkat"/></td>
+            <input id="c" type='button' value='c' onclick="clr()"/>
+            <input id="c" type='button' value='log' onclick="dis('Math.log10(')"/>
+            <input id="c" type='button' value='e' onclick="dis('Math.E')"/>
+            <input id="c" type="button" value='sqrt' onclick="dis('Math.sqrt(')"/>
+            <input id="c" type="button" value="(" onclick="dis('(')"/>
+            <input id="c" type="button" value=")" onclick="dis(')')"/>
+            <input id="c" type="button" value="off" onclick="on()"/>
+                <div id="numbers">
+                    <input class="click" type='button' value='1' onclick="dis('1')"/>
+                    <input class="click" type='button' value='2' onclick="dis('2')"/>
+                    <input class="click" type='button' value='3' onclick="dis('3')"/>
+                    <input class="click" type='button' value='+' onclick="dis('+')"/>
+                    <input class="click" type='button' value='4' onclick="dis('4')"/>
+                    <input class="click" type='button' value='5' onclick="dis('5')"/>
+                    <input class="click" type='button' value='6' onclick="dis('6')"/>
+                    <input class="click" type='button' value='-' onclick="dis('-')"/>
+                    <input class="click" type='button' value='7' onclick="dis('7')"/>
+                    <input class="click" type='button' value='8' onclick="dis('8')"/>
+                    <input class="click" type='button' value='9' onclick="dis('9')"/>
+                    <input class="click" type='button' value='*' onclick="dis('*')"/>
+                    <input class="click" type='button' value='0' onclick="dis('0')"/>
+                    <input class="click" type='button' value='00' onclick="dis('00')"/>
+                    <input class="click" type='button' value='=' onclick="solve()"/>
+                    <input class="click" type='button' value='/' onclick="dis('/')"/>
+                </div>
+        </div>
+        <script>
+            function dis(val)
+            {
+            document.getElementById("venkat").value+=val
+             }
+            function solve()
+            {
+            let x = document.getElementById("venkat").value
+            let y = eval(x)
+            document.getElementById("venkat").value = y
+            }
+            function clr()
+            {
+            document.getElementById("venkat").value = ""
+            }
+            function on(){
+                document.getElementById("venkat").value=""
+            }
+        </script>
+    </boby>
+</html>
